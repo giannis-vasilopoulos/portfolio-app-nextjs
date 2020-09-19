@@ -1,7 +1,7 @@
-import mq from "./utils/breakpoints";
+import mq from "../src/utils/breakpoints";
 import styled from "@emotion/styled";
-import MainLayout from "./layouts/MainLayout";
-import { getHome } from "../lib/contentful";
+import MainLayout from "../src/layouts/MainLayout";
+import { getHome } from "../src/lib/contentful";
 
 const Button = styled.button(
   {
