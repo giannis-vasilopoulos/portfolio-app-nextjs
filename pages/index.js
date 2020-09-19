@@ -14,7 +14,7 @@ const Button = styled.button(
 
 function Home({ homeData }) {
   return (
-    <MainLayout>
+    <MainLayout meta={homeData.metaData}>
       <div>
         <h1>{homeData.title}</h1>
       </div>

@@ -3,6 +3,21 @@ import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { useState, useEffect } from "react";
 
+function Loader() {
+  const [isLoaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const loader = setTimeout(() => setLoaded(true), 1000);
+    return () => clearTimeout(loader);
+  }, []);
+
+  return (
+    <LoaderContainer loading={isLoaded ? 1 : 0}>
+      <DualRing loading={isLoaded ? 1 : 0}>GV</DualRing>
+    </LoaderContainer>
+  );
+}
+
 const LoaderContainer = styled.div(
   {
     width: "100%",
@@ -76,20 +91,5 @@ const DualRing = styled.div(
     transform: props.loading ? "scale(0)" : "scale(1)",
   })
 );
-
-function Loader() {
-  const [isLoaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const loader = setTimeout(() => setLoaded(true), 1000);
-    return () => clearTimeout(loader);
-  }, []);
-
-  return (
-    <LoaderContainer loading={isLoaded}>
-      <DualRing loading={isLoaded}>GV</DualRing>
-    </LoaderContainer>
-  );
-}
 
 export default Loader;

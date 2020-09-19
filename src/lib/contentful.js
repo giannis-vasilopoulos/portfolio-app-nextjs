@@ -37,16 +37,8 @@ function parsePostEntries(entries, cb = parsePost) {
 }
 
 export async function getHome(preview) {
-  const entries = await getClient(preview).getEntry("58ppMOLWSXPqYq15pVNXee");
-
-  // .then(function (entry) {
-  //   // logs the entry metadata
-  //   // console.log(entry.sys);
-
-  //   // logs the field with ID title
-  //   return entry.fields.title;
-  // });
-  return entries.fields;
+  const homeEntry = await getClient(preview).getEntry("58ppMOLWSXPqYq15pVNXee");
+  return homeEntry.fields;
 }
 
 export async function getPreviewPostBySlug(slug) {
