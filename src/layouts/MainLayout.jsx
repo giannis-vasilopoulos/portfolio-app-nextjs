@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Loader from "../components/Loader";
 function MainLayout({ children, title = "Home" }) {
   return (
     <>
@@ -15,8 +15,15 @@ function MainLayout({ children, title = "Home" }) {
         {/*'TODO loop meta data'*/}
 
         <meta name="theme-color" content="#303030" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Raleway:400,700&amp;display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
-      <main>{children}</main>
+      <main>
+        <Loader />
+        {children}
+      </main>
     </>
   );
 }

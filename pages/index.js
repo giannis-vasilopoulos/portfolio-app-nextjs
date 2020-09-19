@@ -18,7 +18,6 @@ function Home({ homeData }) {
       <div>
         <h1>{homeData.title}</h1>
       </div>
-      <Button>This i a button</Button>
     </MainLayout>
   );
 }
