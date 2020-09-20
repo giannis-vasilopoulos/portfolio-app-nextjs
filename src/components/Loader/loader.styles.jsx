@@ -6,12 +6,14 @@ export const LoaderContainer = styled.div(
     width: "100%",
     height: "100%",
     position: "fixed",
-    zIndex: 10000,
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    zIndex: 10000,
     top: 0,
+    transition: "all .5s ease",
+    transitionDelay: "1.3s",
     "&:before, &:after": {
       content: '""',
       height: "50vh",
@@ -23,11 +25,12 @@ export const LoaderContainer = styled.div(
     },
   },
   (props) => ({
+    right: props.loaded ? "-100vw" : 0,
     "&:before": {
-      top: props.loaded ? " -50vh" : 0,
+      top: props.loaded ? "-50vh" : 0,
     },
     "&:after": {
-      bottom: props.loaded ? " -50vh" : 0,
+      bottom: props.loaded ? "-50vh" : 0,
     },
   })
 );

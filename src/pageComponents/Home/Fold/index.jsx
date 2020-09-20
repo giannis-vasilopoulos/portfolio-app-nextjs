@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { keyframes } from "@emotion/core";
 import Typed from "react-typed";
+import AnimatedArrowDown from "components/AnimatedArrowDown/";
 
 const FoldContainer = styled.div({
   display: "flex",
@@ -21,6 +21,7 @@ const TechnologiesContainer = styled.div({
   maxWidth: 625,
   padding: "20px 15px 0",
   width: "100%",
+  alignItems: "start",
 });
 
 const Logo = styled.img({
@@ -29,7 +30,7 @@ const Logo = styled.img({
 
 function Fold({ title, typingTitles, technologies }) {
   return (
-    <FoldContainer id="home">
+    <FoldContainer id='home'>
       {title}
       <Typed
         strings={typingTitles}
@@ -43,10 +44,11 @@ function Fold({ title, typingTitles, technologies }) {
         smartBackspace
       />
       <TechnologiesContainer>
-        {technologies.map((tech) => {
-          return <Logo src={tech.file.url} alt={tech.title} key={tech.title} />;
+        {technologies.map(({ title, file }) => {
+          return <Logo src={file.url} alt={title} key={title} />;
         })}
       </TechnologiesContainer>
+      <AnimatedArrowDown />
     </FoldContainer>
   );
 }
