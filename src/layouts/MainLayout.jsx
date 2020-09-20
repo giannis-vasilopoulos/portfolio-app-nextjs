@@ -1,5 +1,7 @@
 import Head from "next/head";
-import Loader from "../components/Loader";
+import Loader from "../components/Loader/";
+import PropTypes from "prop-types";
+
 function MainLayout({ children, meta }) {
   const { fields: favicon } = meta.fields.favicon;
   return (
@@ -47,5 +49,11 @@ function MainLayout({ children, meta }) {
     </>
   );
 }
+
+MainLayout.propTypes = {
+  meta: PropTypes.shape({
+    fields: PropTypes.object.isRequired,
+  }),
+};
 
 export default MainLayout;

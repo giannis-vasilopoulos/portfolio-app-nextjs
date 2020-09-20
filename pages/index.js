@@ -1,20 +1,11 @@
-import mq from "../src/utils/breakpoints";
-import styled from "@emotion/styled";
 import MainLayout from "../src/layouts/MainLayout";
+import Fold from "../src/pageComponents/Home/Fold/";
 import { getHome } from "../src/lib/contentful";
-
-const Button = styled.button(
-  {
-    fontSize: 18,
-  },
-  mq({
-    color: ["red", "gray", "hotpink"],
-  })
-);
 
 function Home({ homeData }) {
   return (
     <MainLayout meta={homeData.metaData}>
+      <Fold />
       <div>
         <h1>{homeData.title}</h1>
       </div>

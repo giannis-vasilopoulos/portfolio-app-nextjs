@@ -1,24 +1,7 @@
-import mq from "../utils/breakpoints";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
-import { useState, useEffect } from "react";
 
-function Loader() {
-  const [isLoaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const loader = setTimeout(() => setLoaded(true), 1000);
-    return () => clearTimeout(loader);
-  }, []);
-
-  return (
-    <LoaderContainer loading={isLoaded ? 1 : 0}>
-      <DualRing loading={isLoaded ? 1 : 0}>GV</DualRing>
-    </LoaderContainer>
-  );
-}
-
-const LoaderContainer = styled.div(
+export const LoaderContainer = styled.div(
   {
     width: "100%",
     height: "100%",
@@ -41,25 +24,25 @@ const LoaderContainer = styled.div(
   },
   (props) => ({
     "&:before": {
-      top: props.loading ? " -50vh" : 0,
+      top: props.loaded ? " -50vh" : 0,
     },
     "&:after": {
-      bottom: props.loading ? " -50vh" : 0,
+      bottom: props.loaded ? " -50vh" : 0,
     },
   })
 );
 
 const AnimateDualRing = keyframes`
-    0% {
-        transform: rotate(0deg)
-    }
+      0% {
+          transform: rotate(0deg)
+      }
+  
+      to {
+          transform: rotate(1turn)
+      }
+  `;
 
-    to {
-        transform: rotate(1turn)
-    }
-`;
-
-const DualRing = styled.div(
+export const DualRing = styled.div(
   {
     width: 180,
     height: 200,
@@ -88,8 +71,6 @@ const DualRing = styled.div(
     },
   },
   (props) => ({
-    transform: props.loading ? "scale(0)" : "scale(1)",
+    transform: props.loaded ? "scale(0)" : "scale(1)",
   })
 );
-
-export default Loader;
