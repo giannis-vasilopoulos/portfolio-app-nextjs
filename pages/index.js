@@ -1,6 +1,7 @@
-import MainLayout from "../src/layouts/MainLayout";
-import Fold from "../src/pageComponents/Home/Fold/";
-import { getHome } from "../src/lib/contentful";
+import MainLayout from "layouts/MainLayout";
+import Fold from "pageComponents/Home/Fold/";
+import { getHome } from "lib/contentful";
+import Menu from "components/Menu/";
 
 function Home({ homeData }) {
   const technologies = homeData.technologies.map((t) => t.fields);
@@ -11,6 +12,7 @@ function Home({ homeData }) {
         typingTitles={homeData.typingTitles}
         technologies={technologies}
       />
+      <Menu />
       <div>
         <h1>{homeData.title}</h1>
       </div>

@@ -7,40 +7,40 @@ function MainLayout({ children, meta }) {
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta charSet='utf-8' />
+        <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+          name='viewport'
+          content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
         />
         <title>{meta.fields.title}</title>
-        <link rel="apple-touch-icon" sizes="180x180" href={favicon.file.url} />
+        <link rel='apple-touch-icon' sizes='180x180' href={favicon.file.url} />
         <link
-          rel="icon"
+          rel='icon'
           type={favicon.file.contentType}
-          sizes="32x32"
+          sizes='32x32'
           href={favicon.file.url}
         />
         <link
-          rel="icon"
+          rel='icon'
           type={favicon.file.contentType}
-          sizes="16x16"
+          sizes='16x16'
           href={favicon.file.url}
         />
-        <meta name="description" content={meta.fields.description} />
-        <meta property="og:title" content={meta.fields.title} />
-        <meta property="og:description" content={meta.fields.description} />
+        <meta name='description' content={meta.fields.description} />
+        <meta property='og:title' content={meta.fields.title} />
+        <meta property='og:description' content={meta.fields.description} />
         <meta
-          property="og:image"
-          content="https://giannis-vasilopoulos.com/images/share.png"
+          property='og:image'
+          content='https://giannis-vasilopoulos.com/images/share.png'
         />
-        <meta property="og:url" content="https://giannis-vasilopoulos.com/" />
+        <meta property='og:url' content='https://giannis-vasilopoulos.com/' />
         <meta
-          name="apple-mobile-web-app-status-bar"
+          name='apple-mobile-web-app-status-bar'
           content={meta.fields.themeColor}
         />
-        <meta name="msapplication-TileColor" content={meta.fields.themeColor} />
-        <meta name="theme-color" content={meta.fields.themeColor} />
+        <meta name='msapplication-TileColor' content={meta.fields.themeColor} />
+        <meta name='theme-color' content={meta.fields.themeColor} />
       </Head>
       <main>
         <Loader />
