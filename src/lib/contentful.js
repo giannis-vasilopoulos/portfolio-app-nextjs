@@ -40,6 +40,13 @@ export async function getHome(preview) {
   const homeEntry = await getClient(preview).getEntry("58ppMOLWSXPqYq15pVNXee");
   return homeEntry.fields;
 }
+export async function getMenu(menu) {
+  const menuEntry = await getClient(false).getEntries({
+    content_type: "menu",
+    "fields.menuName": menu,
+  });
+  return menuEntry?.items?.map((item) => item.fields)[0];
+}
 
 export async function getPreviewPostBySlug(slug) {
   const entries = await getClient(true).getEntries({
