@@ -1,10 +1,15 @@
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
+import mq from "utils/breakpoints";
 
-export const ArrowContainer = styled.div({
-  position: "relative",
-  marginTop: 40,
-});
+export const ArrowContainer = styled.div(
+  {
+    position: "relative",
+  },
+  mq({
+    marginTop: [0, 40],
+  })
+);
 
 const AnimateDown = keyframes`
   0% {
