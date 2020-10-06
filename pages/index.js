@@ -1,7 +1,8 @@
 import MainLayout from "layouts/MainLayout";
 import Fold from "pageComponents/Home/Fold/";
-import { getHome, getMenu } from "lib/contentful";
+import About from "pageComponents/Home/About/";
 import Menu from "components/Menu/";
+import { getHome, getMenu } from "lib/contentful";
 
 function Home({ homeData, menuData }) {
   const technologies = homeData.technologies.map((t) => t.fields);
@@ -13,12 +14,18 @@ function Home({ homeData, menuData }) {
         technologies={technologies}
       />
       <Menu data={menuData} />
+      <About
+        title={homeData.aboutTitle}
+        skills={homeData.skills}
+        aboutImage={homeData.aboutImage}
+        bio={homeData.aboutInfo}
+      />
     </MainLayout>
   );
 }
 
 export async function getStaticProps({ preview = false }) {
-  let [homeData, menuData] = await Promise.all([
+  const [homeData, menuData] = await Promise.all([
     getHome(preview),
     getMenu("Main Menu"),
   ]);
