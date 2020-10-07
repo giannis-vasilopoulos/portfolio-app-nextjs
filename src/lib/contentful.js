@@ -17,6 +17,11 @@ export async function getHome(preview) {
   const homeEntry = await getClient(preview).getEntry("58ppMOLWSXPqYq15pVNXee");
   return homeEntry.fields;
 }
+export async function getEntryById(id) {
+  const entry = await getClient(false).getEntry(id);
+  return entry.fields;
+}
+
 export async function getMenu(menu) {
   const menuEntry = await getClient(false).getEntries({
     content_type: "menu",

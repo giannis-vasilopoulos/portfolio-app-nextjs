@@ -2,7 +2,7 @@ import MainLayout from "layouts/MainLayout";
 import Fold from "pageComponents/Home/Fold/";
 import About from "pageComponents/Home/About/";
 import Menu from "components/Menu/";
-import { getHome, getMenu } from "lib/contentful";
+import { getHome, getMenu, getEntryById } from "lib/contentful";
 
 function Home({ homeData, menuData }) {
   const technologies = homeData.technologies.map((t) => t.fields);
@@ -16,9 +16,9 @@ function Home({ homeData, menuData }) {
       <Menu data={menuData} />
       <About
         title={homeData.aboutTitle}
-        skills={homeData.skills}
-        aboutImage={homeData.aboutImage}
-        bio={homeData.aboutInfo}
+        skills={homeData.skills.fields}
+        aboutImage={homeData.aboutImage.fields}
+        bio={homeData.aboutInfo.content[0]}
       />
     </MainLayout>
   );
