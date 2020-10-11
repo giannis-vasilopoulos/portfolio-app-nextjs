@@ -23,6 +23,11 @@ export const SocialList = styled.ul({
   fontSize: 30,
   a: {
     color: "#fff",
+    svg: {
+      height: "auto",
+      width: "100%",
+      maxWidth: 32,
+    },
   },
 });
 

@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   ContactContainer,
   SocialContainer,
@@ -17,9 +16,12 @@ function Footer({ footer }) {
           {footer.socialMenu.map(({ fields: social }) => {
             return (
               <li key={social.title}>
-                <a href={social.link} target="_blank" rel="noreferrer">
-                  <FontAwesomeIcon icon={[social.iconType, social.title]} />
-                </a>
+                <a
+                  href={social.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  dangerouslySetInnerHTML={{ __html: social.svgCode }}
+                />
               </li>
             );
           })}
