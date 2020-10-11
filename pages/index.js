@@ -2,10 +2,11 @@ import MainLayout from "layouts/MainLayout";
 import Fold from "pageComponents/Home/Fold/";
 import About from "pageComponents/Home/About/";
 import Menu from "components/Menu/";
-import { getHome, getMenu, getEntryById } from "lib/contentful";
+import { getHome, getMenu } from "lib/contentful";
 
 function Home({ homeData, menuData }) {
   const technologies = homeData.technologies.map((t) => t.fields);
+  console.log(homeData);
   return (
     <MainLayout meta={homeData.metaData}>
       <Fold
@@ -16,7 +17,8 @@ function Home({ homeData, menuData }) {
       <Menu data={menuData} />
       <About
         title={homeData.aboutTitle}
-        skills={homeData.skills.fields}
+        skillsTitle={homeData.skillsTitle}
+        skillsItems={homeData.skillsItems}
         aboutImage={homeData.aboutImage.fields}
         bio={homeData.aboutInfo.content[0]}
       />
