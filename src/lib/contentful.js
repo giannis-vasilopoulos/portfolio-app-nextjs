@@ -73,30 +73,3 @@ export async function getAllPostsWithSlug() {
   });
   return parsePostEntries(entries, (post) => post.fields);
 }
-
-export async function getAllPostsForHome(preview) {
-  const entries = await getClient(preview).getEntries({
-    content_type: "post",
-    order: "-fields.date",
-  });
-  return parsePostEntries(entries);
-}
-
-export async function getPostAndMorePosts(slug, preview) {
-  const entry = await getClient(preview).getEntries({
-    content_type: "post",
-    limit: 1,
-    "fields.slug[in]": slug,
-  });
-  const entries = await getClient(preview).getEntries({
-    content_type: "post",
-    limit: 2,
-    order: "-fields.date",
-    "fields.slug[nin]": slug,
-  });
-
-  return {
-    post: parsePostEntries(entry)[0],
-    morePosts: parsePostEntries(entries),
-  };
-}

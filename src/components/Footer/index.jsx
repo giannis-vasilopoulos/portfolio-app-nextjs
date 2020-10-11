@@ -9,7 +9,6 @@ import {
 } from "./footer.styles";
 
 function Footer({ footer }) {
-  console.log(footer);
   return (
     <ContactContainer>
       <SocialContainer>

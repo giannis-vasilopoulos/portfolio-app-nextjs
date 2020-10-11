@@ -1,1 +1,1 @@
-## Portfolio Website using next.js & contentful
+## Portfolio Website using Next.js, React, Emotion & Contentful
