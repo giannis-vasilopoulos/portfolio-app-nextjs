@@ -1,33 +1,15 @@
-import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-const ContactContainer = styled.div({
-  padding: "40px 0 0",
-  background: "#3490dc",
-  color: "#fff",
-});
-const SocialContainer = styled.div({
-  paddingBottom: 70,
-  paddingTop: 40,
-  textAlign: "center",
-  ">h2": {
-    textTransform: "uppercase",
-  },
-});
-const SocialList = styled.ul({
-  listStyleType: "none",
-  display: "flex",
-  justifyContent: "space-between",
-  padding: 0,
-  maxWidth: 300,
-  margin: "auto",
-  fontSize: 30,
-  a: {
-    color: "#fff",
-  },
-});
+import {
+  ContactContainer,
+  SocialContainer,
+  SocialList,
+  VersionStyle,
+  CopyrightContainer,
+  CopyrightText,
+} from "./footer.styles";
 
 function Footer({ footer }) {
+  console.log(footer);
   return (
     <ContactContainer>
       <SocialContainer>
@@ -44,6 +26,13 @@ function Footer({ footer }) {
           })}
         </SocialList>
       </SocialContainer>
+      <CopyrightContainer>
+        <CopyrightText>
+          {footer.copyright}{" "}
+          <VersionStyle>{process.env.NEXT_PUBLIC_VERSION}</VersionStyle>
+        </CopyrightText>
+        <CopyrightText align="right">{footer.createdLabel}</CopyrightText>
+      </CopyrightContainer>
     </ContactContainer>
   );
 }
