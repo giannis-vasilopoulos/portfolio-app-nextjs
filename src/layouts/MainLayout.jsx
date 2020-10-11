@@ -46,8 +46,8 @@ function MainLayout({ children, meta, footer }) {
       <main>
         <Loader />
         {children}
-        <Footer footer={footer} />
       </main>
+      <Footer id="contact" footer={footer} />
     </>
   );
 }

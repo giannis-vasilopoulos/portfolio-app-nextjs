@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import { css, keyframes } from "@emotion/core";
 
 export const NavLinkStyle = css({
   textTransform: "uppercase",
@@ -15,4 +15,24 @@ export const VersionStyle = styled.small({
   fontFamily: "sans-serif",
   textTransform: "lowercase",
   fontSize: 12,
+});
+
+export const BurgerStyle = css({
+  margin: "10px 0",
+});
+
+const SlideDown = keyframes`
+  0% {
+    transform: translateY(-100px);
+  }
+`;
+
+export const FixedMenu = css({
+  top: 0,
+  bottom: "inherit",
+  left: 0,
+  width: "100%",
+  animation: `${SlideDown} 0.5s`,
+  position: "fixed",
+  zIndex: 100,
 });

@@ -1,6 +1,7 @@
 import Typed from "react-typed";
 import AnimatedArrowDown from "components/AnimatedArrowDown/";
 import { FoldContainer, TechnologiesContainer, Logo } from "./fold.styles";
+import { Link } from "react-scroll";
 
 function Fold({ title, typingTitles, technologies }) {
   return (
@@ -22,7 +23,9 @@ function Fold({ title, typingTitles, technologies }) {
           return <Logo src={file.url} alt={title} key={title} />;
         })}
       </TechnologiesContainer>
-      <AnimatedArrowDown />
+      <Link to="about" spy={true} smooth={true} duration={500}>
+        <AnimatedArrowDown />
+      </Link>
     </FoldContainer>
   );
 }

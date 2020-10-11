@@ -7,9 +7,9 @@ import {
   CopyrightText,
 } from "./footer.styles";
 
-function Footer({ footer }) {
+function Footer({ footer, id }) {
   return (
-    <ContactContainer>
+    <ContactContainer id={id}>
       <SocialContainer>
         <h2>{footer.contactTitle}</h2>
         <SocialList>
@@ -29,7 +29,7 @@ function Footer({ footer }) {
       </SocialContainer>
       <CopyrightContainer>
         <CopyrightText>
-          {footer.copyright}{" "}
+          © {new Date().getFullYear()} {footer.copyright}{" "}
           <VersionStyle>{process.env.NEXT_PUBLIC_VERSION}</VersionStyle>
         </CopyrightText>
         <CopyrightText align="right">{footer.createdLabel}</CopyrightText>

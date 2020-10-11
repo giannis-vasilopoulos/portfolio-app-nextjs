@@ -1,26 +1,32 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLinkStyle, VersionStyle } from "./menu.styles";
+import { NavLinkStyle, VersionStyle, BurgerStyle } from "./menu.styles";
+import { Link } from "react-scroll";
 
 function Menu({ data: { logoName, menuItems } }) {
   return (
-    <Navbar bg='white' expand='lg' id='header-menu' className='shadow-sm py-0'>
-      <Navbar.Brand css={NavLinkStyle} href='#home'>
+    <Navbar bg="white" expand="lg" id="header-menu" className="shadow-sm py-0">
+      <Navbar.Brand css={NavLinkStyle} href="#home">
         {logoName}{" "}
         <VersionStyle>{process.env.NEXT_PUBLIC_VERSION}</VersionStyle>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls='basic-navbar-nav' />
-      <Navbar.Collapse id='basic-navbar-nav'>
-        <Nav className='ml-auto'>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" css={BurgerStyle} />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
           {menuItems.map(({ fields }) => {
             return (
-              <Nav.Link
+              <Link
                 key={fields.label}
-                href={fields.link}
+                activeClass="active"
+                to={fields.link}
+                spy={true}
+                smooth={true}
+                duration={500}
+                className="nav-link"
                 css={NavLinkStyle}
               >
                 {fields.label}
-              </Nav.Link>
+              </Link>
             );
           })}
         </Nav>

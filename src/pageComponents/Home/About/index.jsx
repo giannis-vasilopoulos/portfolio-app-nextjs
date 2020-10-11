@@ -48,6 +48,7 @@ function About({
                   key={image.title}
                   xs="6"
                   lg={image.description > 90 ? "3" : "2"}
+                  className="mb-4"
                 >
                   <ToolImage
                     alt={image.title}

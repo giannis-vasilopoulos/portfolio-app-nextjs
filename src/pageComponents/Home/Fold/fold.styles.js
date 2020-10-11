@@ -37,6 +37,6 @@ export const Logo = styled.img(
     maxWidth: "50px",
   },
   mq({
-    margin: "0 15px 25px",
+    margin: "0 20px 25px",
   })
 );
