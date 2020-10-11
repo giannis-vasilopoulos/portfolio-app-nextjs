@@ -1,52 +1,18 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import styled from "@emotion/styled";
-import mq from "utils/breakpoints";
 import Skills from "components/Skills/";
-import { css } from "@emotion/core";
-
-const AboutContainer = styled.div({
-  minHeight: "100vh",
-  padding: "100px 0",
-});
-
-const Title = styled.h2({
-  textAlign: "center",
-  textTransform: "uppercase",
-});
-
-const RowStyles = css({
-  marginTop: "4.5em",
-});
-
-const ToolsRowStyles = css({
-  justifyContent: "space-around",
-  maxWidth: 700,
-  margin: "auto",
-});
-
-const ImageBio = styled.img({
-  width: 250,
-  borderRadius: "20%",
-  height: 250,
-  objectFit: "cover",
-});
-
-const ColStyles = css({ textAlign: "center" });
-
-const BioContainer = styled.div({
-  marginTop: "1em",
-});
-
-const ToolsContainer = styled.div({
-  marginTop: "3em",
-  textAlign: "center",
-});
-
-const ToolImage = styled.img((props) => ({
-  width: props.width ? props.width : 90,
-}));
+import {
+  AboutContainer,
+  Title,
+  RowStyles,
+  ToolsContainer,
+  ToolsRowStyles,
+  ImageBio,
+  BioContainer,
+  ToolImage,
+  ColStyles,
+} from "./about.styles";
 
 function About({
   title,
