@@ -17,9 +17,13 @@ export async function getHome(preview) {
   const homeEntry = await getClient(preview).getEntry("58ppMOLWSXPqYq15pVNXee");
   return homeEntry.fields;
 }
-export async function getEntryById(id) {
-  const entry = await getClient(false).getEntry(id);
-  return entry.fields;
+
+export async function getFooter(name) {
+  const entry = await getClient(false).getEntries({
+    content_type: "footer",
+    "fields.footerName": name,
+  });
+  return entry?.items?.map((item) => item.fields)[0];
 }
 
 export async function getMenu(menu) {

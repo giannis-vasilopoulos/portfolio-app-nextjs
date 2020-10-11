@@ -2,13 +2,12 @@ import MainLayout from "layouts/MainLayout";
 import Fold from "pageComponents/Home/Fold/";
 import About from "pageComponents/Home/About/";
 import Menu from "components/Menu/";
-import { getHome, getMenu } from "lib/contentful";
+import { getHome, getMenu, getFooter } from "lib/contentful";
 
-function Home({ homeData, menuData }) {
+function Home({ homeData, menuData, footerData }) {
   const technologies = homeData.technologies.map((t) => t.fields);
-  console.log(homeData);
   return (
-    <MainLayout meta={homeData.metaData}>
+    <MainLayout meta={homeData.metaData} footer={footerData}>
       <Fold
         title={homeData.title}
         typingTitles={homeData.typingTitles}
@@ -29,12 +28,13 @@ function Home({ homeData, menuData }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const [homeData, menuData] = await Promise.all([
+  const [homeData, menuData, footerData] = await Promise.all([
     getHome(preview),
     getMenu("Main Menu"),
+    getFooter("Main Footer"),
   ]);
   return {
-    props: { preview, homeData, menuData },
+    props: { preview, homeData, menuData, footerData },
     revalidate: 1,
   };
 }

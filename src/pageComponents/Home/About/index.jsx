@@ -43,7 +43,6 @@ function About({
           <h3>{toolsTitle}</h3>
           <Row css={ToolsRowStyles} className="align-items-center">
             {toolsImages.map(({ fields: image }) => {
-              console.log(image);
               return (
                 <Col
                   key={image.title}
