@@ -21,6 +21,8 @@ function Home({ homeData, menuData }) {
         skillsItems={homeData.skillsItems}
         aboutImage={homeData.aboutImage.fields}
         bio={homeData.aboutInfo.content[0]}
+        toolsTitle={homeData.toolsTitle}
+        toolsImages={homeData.toolsImages}
       />
     </MainLayout>
   );

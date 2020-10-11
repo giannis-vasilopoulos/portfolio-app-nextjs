@@ -20,6 +20,12 @@ const RowStyles = css({
   marginTop: "4.5em",
 });
 
+const ToolsRowStyles = css({
+  justifyContent: "space-around",
+  maxWidth: 700,
+  margin: "auto",
+});
+
 const ImageBio = styled.img({
   width: 250,
   borderRadius: "20%",
@@ -33,7 +39,24 @@ const BioContainer = styled.div({
   marginTop: "1em",
 });
 
-function About({ title, aboutImage, bio, skillsTitle, skillsItems }) {
+const ToolsContainer = styled.div({
+  marginTop: "3em",
+  textAlign: "center",
+});
+
+const ToolImage = styled.img((props) => ({
+  width: props.width ? props.width : 90,
+}));
+
+function About({
+  title,
+  aboutImage,
+  bio,
+  skillsTitle,
+  skillsItems,
+  toolsTitle,
+  toolsImages,
+}) {
   return (
     <AboutContainer id="about">
       <Container>
@@ -50,6 +73,27 @@ function About({ title, aboutImage, bio, skillsTitle, skillsItems }) {
             <Skills skills={skillsItems} />
           </Col>
         </Row>
+        <ToolsContainer>
+          <h3>{toolsTitle}</h3>
+          <Row css={ToolsRowStyles} className="align-items-center">
+            {toolsImages.map(({ fields: image }) => {
+              console.log(image);
+              return (
+                <Col
+                  key={image.title}
+                  xs="6"
+                  lg={image.description > 90 ? "3" : "2"}
+                >
+                  <ToolImage
+                    alt={image.title}
+                    src={image.file.url}
+                    width={image.description}
+                  />
+                </Col>
+              );
+            })}
+          </Row>
+        </ToolsContainer>
       </Container>
     </AboutContainer>
   );
