@@ -13,6 +13,7 @@ import {
   ToolImage,
   ColStyles,
 } from "./about.styles";
+import { Slide } from "react-awesome-reveal";
 
 function About({
   title,
@@ -29,14 +30,18 @@ function About({
         <Title>{title}</Title>
         <Row css={RowStyles} className="align-items-center">
           <Col md="6" css={ColStyles}>
-            <ImageBio src={aboutImage.file.url} />
-            <BioContainer
-              dangerouslySetInnerHTML={{ __html: bio.content[0].value }}
-            />
+            <Slide direction="left" triggerOnce>
+              <ImageBio src={aboutImage.file.url} />
+              <BioContainer
+                dangerouslySetInnerHTML={{ __html: bio.content[0].value }}
+              />
+            </Slide>
           </Col>
           <Col md="6">
-            <h3>{skillsTitle}</h3>
-            <Skills skills={skillsItems} />
+            <Slide direction="right" triggerOnce>
+              <h3>{skillsTitle}</h3>
+              <Skills skills={skillsItems} />
+            </Slide>
           </Col>
         </Row>
         <ToolsContainer>
