@@ -2,11 +2,11 @@ import MainLayout from "layouts/MainLayout";
 import Fold from "pageComponents/Home/Fold/";
 import About from "pageComponents/Home/About/";
 import Menu from "components/Menu/";
-import { useRef, useLayoutEffect } from "react";
 import { getHome, getMenu, getFooter } from "lib/contentful";
 
 function Home({ homeData, menuData, footerData }) {
   const technologies = homeData.technologies.map((t) => t.fields);
+
   return (
     <MainLayout meta={homeData.metaData} footer={footerData}>
       <Fold

@@ -36,7 +36,7 @@ function Footer({ footer, id }) {
           © {new Date().getFullYear()} {footer.copyright}{" "}
           <VersionStyle>{process.env.NEXT_PUBLIC_VERSION}</VersionStyle>
         </CopyrightText>
-        <CopyrightText align="right">{footer.createdLabel}</CopyrightText>
+        <CopyrightText align="right" gutterMb>{footer.createdLabel}</CopyrightText>
       </CopyrightContainer>
     </ContactContainer>
   );

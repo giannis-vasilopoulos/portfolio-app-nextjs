@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import mq from "utils/breakpoints";
 
 export const ContactContainer = styled.div({
   padding: "40px 0 0",
@@ -46,9 +47,9 @@ export const CopyrightContainer = styled.div({
   flexWrap: "wrap",
 });
 
-export const CopyrightText = styled.p(
-  {
-    margin: 0,
-  },
-  (props) => ({ textAlign: props.align ? props.align : "left" })
+export const CopyrightText = styled.p((props) =>
+  mq({
+    textAlign: ["left", props.align ? props.align : "left"],
+    margin: [props.gutterMb ? "10px 0" : "0", "0"],
+  })
 );
