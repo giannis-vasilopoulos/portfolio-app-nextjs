@@ -23,7 +23,7 @@ function Fold({ title, typingTitles, technologies }) {
           return <Logo src={file.url} alt={title} key={title} />;
         })}
       </TechnologiesContainer>
-      <Link to="about" spy={true} smooth={true} duration={500}>
+      <Link to="about" spy smooth duration={500}>
         <AnimatedArrowDown />
       </Link>
     </FoldContainer>

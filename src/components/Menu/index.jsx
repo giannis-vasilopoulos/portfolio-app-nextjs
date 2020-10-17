@@ -36,8 +36,8 @@ function Menu({ data: { logoName, menuItems } }) {
                 key={fields.label}
                 activeClass="active"
                 to={fields.link}
-                spy={true}
-                smooth={true}
+                spy
+                smooth
                 duration={500}
                 className="nav-link"
                 css={NavLinkStyle}
