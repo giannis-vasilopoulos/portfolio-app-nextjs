@@ -8,6 +8,33 @@ function MainLayout({ children, meta, footer }) {
   return (
     <>
       <Head>
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <script
+              id="Cookiebot"
+              src="https://consent.cookiebot.com/uc.js"
+              data-cbid="714f55d0-41b0-4b59-bbdf-3f6f39851765"
+              data-blockingmode="auto"
+              type="text/javascript"
+            ></script>
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=UA-148440679-1"
+            ></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'UA-148440679-1');
+        `,
+              }}
+            />
+          </>
+        )}
+
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -33,7 +60,7 @@ function MainLayout({ children, meta, footer }) {
         <meta property="og:description" content={meta.fields.description} />
         <meta
           property="og:image"
-          content="https://giannis-vasilopoulos.com/images/share.png"
+          content={meta.fields.shareImage.fields.file.url}
         />
         <meta property="og:url" content="https://giannis-vasilopoulos.com/" />
         <meta
