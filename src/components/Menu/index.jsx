@@ -1,28 +1,28 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLinkStyle, VersionStyle, BurgerStyle, FixedMenu} from "./menu.styles";
-import { useRef, useLayoutEffect, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
-function Menu({ data: { logoName, menuItems } }) {
+function Menu({ data: { logoName, menuItems }, foldHeight }) {
   const [animateOnScroll, setAnimateOnScroll] = useState(false);
-  const menuEl = useRef(null)
 
   const handleScroll = (menuTop) => {
     setAnimateOnScroll(window.scrollY >= menuTop);
   };
 
   useEffect(() => {
-    const menuTop = menuEl.current.getBoundingClientRect().top
 
-    window.addEventListener("scroll", () => handleScroll(menuTop));
+    if(foldHeight){
+      window.addEventListener("scroll", () => handleScroll(foldHeight));
+    }
 
-    return () => window.removeEventListener("scroll", () => handleScroll(menuTop));
+    return () => window.removeEventListener("scroll", () => handleScroll(foldHeight));
 
-  }, []);
+  }, [foldHeight]);
 
   return (
-    <Navbar bg="white" expand="lg" id="header-menu" ref={menuEl} css={animateOnScroll && FixedMenu } className="shadow-sm py-0">
+    <Navbar bg="white" expand="lg" id="header-menu" css={animateOnScroll && FixedMenu} className="shadow-sm py-0">
       <Navbar.Brand css={NavLinkStyle} href="#home">
         {logoName}{" "}
         <VersionStyle>{process.env.NEXT_PUBLIC_VERSION}</VersionStyle>

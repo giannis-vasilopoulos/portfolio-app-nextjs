@@ -1,7 +1,6 @@
 import MainLayout from "layouts/MainLayout";
 import Fold from "pageComponents/Home/Fold/";
 import About from "pageComponents/Home/About/";
-import Menu from "components/Menu/";
 import { getHome, getMenu, getFooter } from "lib/contentful";
 
 function Home({ homeData, menuData, footerData }) {
@@ -13,8 +12,8 @@ function Home({ homeData, menuData, footerData }) {
         title={homeData.title}
         typingTitles={homeData.typingTitles}
         technologies={technologies}
+        menuData={menuData}
       />
-      <Menu data={menuData} />
       <About
         title={homeData.aboutTitle}
         skillsTitle={homeData.skillsTitle}

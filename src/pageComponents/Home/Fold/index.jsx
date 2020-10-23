@@ -1,12 +1,24 @@
 import Typed from "react-typed";
 import AnimatedArrowDown from "components/AnimatedArrowDown/";
 import Particles from "react-tsparticles";
+import Menu from "components/Menu/";
 import { FoldContainer, TechnologiesContainer, Logo } from "./fold.styles";
 import { Link } from "react-scroll";
+import { useRef, useEffect, useState } from "react";
 
-function Fold({ title, typingTitles, technologies }) {
+function Fold({ title, typingTitles, technologies, menuData }) {
+  const [foldHeight, setFoldHeight] = useState(null)
+  const foldRef = useRef(null);
+
+  useEffect(() => {
+    if(foldRef.current){
+      setFoldHeight(foldRef.current.getBoundingClientRect().height)
+    }
+  }, [foldRef])
+  
   return (
-    <FoldContainer id="home">
+    <>
+    <FoldContainer id="home" ref={foldRef}>
       <Particles
         params={{
           fpsLimit: 60,
@@ -141,6 +153,8 @@ function Fold({ title, typingTitles, technologies }) {
         <AnimatedArrowDown />
       </Link>
     </FoldContainer>
+    <Menu data={menuData} foldHeight={foldHeight && foldHeight} />
+    </>
   );
 }
 
