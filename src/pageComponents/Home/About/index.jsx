@@ -31,7 +31,10 @@ function About({
         <Row css={RowStyles} className="align-items-center">
           <Col md="6" css={ColStyles}>
             <Slide direction="left" triggerOnce>
-              <ImageBio src={aboutImage.file.url} />
+              <ImageBio
+                src={aboutImage.file.url}
+                alt={aboutImage.file.fileName.replace(".jpg", "")}
+              />
               <BioContainer
                 dangerouslySetInnerHTML={{ __html: bio.content[0].value }}
               />

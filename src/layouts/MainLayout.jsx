@@ -7,7 +7,7 @@ function MainLayout({ children, meta, footer }) {
   const { fields: favicon } = meta.fields.favicon;
   return (
     <>
-      <Head>
+      <Head lang="en">
         {process.env.NODE_ENV === "production" && (
           <>
             <script
@@ -39,7 +39,7 @@ function MainLayout({ children, meta, footer }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"
         />
         <title>{meta.fields.title}</title>
         <link rel="apple-touch-icon" sizes="180x180" href={favicon.file.url} />
