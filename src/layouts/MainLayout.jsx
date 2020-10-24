@@ -7,7 +7,7 @@ function MainLayout({ children, meta, footer }) {
   const { fields: favicon } = meta.fields.favicon;
   return (
     <>
-      <Head lang="en">
+      <Head>
         {process.env.NODE_ENV === "production" && (
           <>
             <script
