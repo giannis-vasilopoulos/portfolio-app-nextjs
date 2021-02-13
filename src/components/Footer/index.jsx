@@ -13,18 +13,16 @@ function Footer({ footer, id }) {
       <SocialContainer>
         <h2>{footer.contactTitle}</h2>
         <SocialList>
-          {footer.socialMenu.map(({ fields: social }) => {
-            return (
-              <li key={social.title}>
-                <a
-                  href={social.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  dangerouslySetInnerHTML={{ __html: social.svgCode }}
-                />
-              </li>
-            );
-          })}
+          {footer.socialMenu.map(({ fields: social }) => (
+            <li key={social.title}>
+              <a
+                href={social.link}
+                target="_blank"
+                rel="noreferrer"
+                dangerouslySetInnerHTML={{ __html: social.svgCode }}
+              />
+            </li>
+          ))}
         </SocialList>
       </SocialContainer>
       <CopyrightContainer>
