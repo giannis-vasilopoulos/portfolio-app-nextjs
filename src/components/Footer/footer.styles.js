@@ -5,15 +5,22 @@ export const ContactContainer = styled.div({
   padding: "40px 0 0",
   background: "#3490dc",
   color: "#fff",
+  overflow: "hidden",
 });
-export const SocialContainer = styled.div({
-  paddingBottom: 70,
-  paddingTop: 40,
-  textAlign: "center",
-  ">h2": {
-    textTransform: "uppercase",
+export const SocialContainer = styled.div(
+  {
+    paddingBottom: 70,
+    paddingTop: 40,
+    textAlign: "center",
+    transition: "all ease 0.7s",
+    ">h2": {
+      textTransform: "uppercase",
+    },
   },
-});
+  (props) => ({
+    transform: props.inView ? "translateY(0)" : "translateY(50vh)",
+  })
+);
 export const SocialList = styled.ul({
   listStyleType: "none",
   display: "flex",
