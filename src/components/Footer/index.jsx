@@ -6,25 +6,32 @@ import {
   CopyrightContainer,
   CopyrightText,
 } from "./footer.styles";
+import { InView } from "react-intersection-observer";
 
 function Footer({ footer, id }) {
   return (
     <ContactContainer id={id}>
-      <SocialContainer>
-        <h2>{footer.contactTitle}</h2>
-        <SocialList>
-          {footer.socialMenu.map(({ fields: social }) => (
-            <li key={social.title}>
-              <a
-                href={social.link}
-                target="_blank"
-                rel="noreferrer"
-                dangerouslySetInnerHTML={{ __html: social.svgCode }}
-              />
-            </li>
-          ))}
-        </SocialList>
-      </SocialContainer>
+      <InView threshold={0.5} triggerOnce={true}>
+        {({ ref, inView }) => (
+          <div ref={ref}>
+            <SocialContainer inView={inView}>
+              <h2>{footer.contactTitle}</h2>
+              <SocialList>
+                {footer.socialMenu.map(({ fields: social }) => (
+                  <li key={social.title}>
+                    <a
+                      href={social.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      dangerouslySetInnerHTML={{ __html: social.svgCode }}
+                    />
+                  </li>
+                ))}
+              </SocialList>
+            </SocialContainer>
+          </div>
+        )}
+      </InView>
       <CopyrightContainer>
         <CopyrightText>
           © {new Date().getFullYear()} {footer.copyright}{" "}
