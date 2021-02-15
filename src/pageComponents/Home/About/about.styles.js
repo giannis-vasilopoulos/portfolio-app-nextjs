@@ -28,7 +28,27 @@ export const ImageBio = styled.img({
   objectFit: "cover",
 });
 
-export const ColStyles = css({ textAlign: "center" });
+export const ColStyles = css({
+  textAlign: "center",
+});
+
+export const LeftColStyles = styled.div(
+  {
+    transition: "all ease 0.7s",
+  },
+  (props) => ({
+    transform: props.inView ? "translateX(0)" : "translateX(-50vw)",
+  })
+);
+
+export const RightColStyles = styled.div(
+  {
+    transition: "all ease 0.7s",
+  },
+  (props) => ({
+    transform: props.inView ? "translateX(0)" : "translateX(50vw)",
+  })
+);
 
 export const BioContainer = styled.div({
   marginTop: "1em",
