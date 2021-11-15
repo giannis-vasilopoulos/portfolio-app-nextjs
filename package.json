@@ -18,16 +18,16 @@
     "react": "17.0.2",
     "prop-types": "^15.7.2",
     "react-bootstrap": "^2.0.2",
-    "react-intersection-observer": "^8.31.0",
+    "react-intersection-observer": "^8.32.2",
     "react-dom": "17.0.2",
     "react-scroll": "^1.8.4",
     "react-typed": "^1.2.0"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
-    "eslint": "^7.16.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint": "^8.2.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }
