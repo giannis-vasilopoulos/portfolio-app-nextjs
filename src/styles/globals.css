@@ -26,10 +26,10 @@ body#body {
   background-color: #fff;
 }
 
-h1,
-h2,
-h3,
-h4 {
+body#body h1,
+body#body h2,
+body#body h3,
+body#body h4 {
   font-weight: 700;
 }
 
