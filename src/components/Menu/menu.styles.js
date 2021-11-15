@@ -16,6 +16,7 @@ export const VersionStyle = styled.small({
   fontFamily: "sans-serif",
   textTransform: "lowercase",
   fontSize: 12,
+  fontWeight: 400,
 });
 
 export const BurgerStyle = css({
