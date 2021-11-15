@@ -15,7 +15,7 @@ a {
   box-sizing: border-box;
 }
 
-body {
+body#body {
   margin: 0;
   font-family: Raleway, sans-serif;
   font-size: 1rem;
