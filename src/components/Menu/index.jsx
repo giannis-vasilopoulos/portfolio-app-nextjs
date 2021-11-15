@@ -1,5 +1,6 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
 import { NavLinkStyle, VersionStyle, BurgerStyle, FixedMenu} from "./menu.styles";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
@@ -23,13 +24,14 @@ function Menu({ data: { logoName, menuItems }, foldHeight }) {
 
   return (
     <Navbar bg="white" expand="lg" id="header-menu" css={animateOnScroll && FixedMenu} className="shadow-sm py-0">
+      <Container fluid>
       <Navbar.Brand css={NavLinkStyle} href="#home">
         {logoName}{" "}
         <VersionStyle>{process.env.NEXT_PUBLIC_VERSION}</VersionStyle>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" css={BurgerStyle} />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
+        <Nav className="ms-auto">
           {menuItems.map(({ fields }) => {
             return (
               <Link
@@ -48,6 +50,7 @@ function Menu({ data: { logoName, menuItems }, foldHeight }) {
           })}
         </Nav>
       </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 }
