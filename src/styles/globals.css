@@ -15,7 +15,7 @@ a {
   box-sizing: border-box;
 }
 
-body {
+body#body {
   margin: 0;
   font-family: Raleway, sans-serif;
   font-size: 1rem;
@@ -26,10 +26,10 @@ body {
   background-color: #fff;
 }
 
-h1,
-h2,
-h3,
-h4 {
+body#body h1,
+body#body h2,
+body#body h3,
+body#body h4 {
   font-weight: 700;
 }
 
