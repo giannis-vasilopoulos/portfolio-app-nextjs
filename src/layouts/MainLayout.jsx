@@ -84,6 +84,7 @@ MainLayout.propTypes = {
     fields: PropTypes.object.isRequired,
   }),
   footer: PropTypes.object.isRequired,
+  children: PropTypes.node,
 };
 
 export default MainLayout;
