@@ -9,31 +9,6 @@ function MainLayout({ children, meta, footer }) {
   return (
     <>
       <Head>
-        {process.env.NODE_ENV === "production" && (
-          <>
-            <Script
-              id="Cookiebot"
-              src="https://consent.cookiebot.com/uc.js"
-              data-cbid="714f55d0-41b0-4b59-bbdf-3f6f39851765"
-              data-blockingmode="auto"
-            ></Script>
-
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=UA-148440679-1"
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                
-                  gtag('config', 'UA-148440679-1');
-                `}
-            </Script>
-          </>
-        )}
-
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -69,6 +44,30 @@ function MainLayout({ children, meta, footer }) {
         <meta name="msapplication-TileColor" content={meta.fields.themeColor} />
         <meta name="theme-color" content={meta.fields.themeColor} />
       </Head>
+      {process.env.NODE_ENV === "production" && (
+        <>
+          <Script
+            id="Cookiebot"
+            src="https://consent.cookiebot.com/uc.js"
+            data-cbid="714f55d0-41b0-4b59-bbdf-3f6f39851765"
+            data-blockingmode="auto"
+          ></Script>
+
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=UA-148440679-1"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                
+                  gtag('config', 'UA-148440679-1');
+                `}
+          </Script>
+        </>
+      )}
       <main>
         <Loader />
         {children}
