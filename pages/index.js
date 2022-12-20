@@ -35,7 +35,7 @@ export async function getStaticProps({ preview = false }) {
   ]);
   return {
     props: { preview, homeData, menuData, footerData },
-    revalidate: 1,
+    revalidate: 600,
   };
 }
 
