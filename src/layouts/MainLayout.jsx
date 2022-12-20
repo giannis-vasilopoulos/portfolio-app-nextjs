@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/next-script-for-ga */
+/* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head";
 import Loader from "components/Loader/";
 import Footer from "components/Footer";
@@ -84,6 +86,7 @@ MainLayout.propTypes = {
     fields: PropTypes.object.isRequired,
   }),
   footer: PropTypes.object.isRequired,
+  children: PropTypes.node,
 };
 
 export default MainLayout;
