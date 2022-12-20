@@ -1,9 +1,8 @@
-/* eslint-disable @next/next/next-script-for-ga */
-/* eslint-disable @next/next/no-sync-scripts */
 import Head from "next/head";
 import Loader from "components/Loader/";
 import Footer from "components/Footer";
 import PropTypes from "prop-types";
+import Script from "next/script";
 
 function MainLayout({ children, meta, footer }) {
   const { fields: favicon } = meta.fields.favicon;
@@ -12,28 +11,26 @@ function MainLayout({ children, meta, footer }) {
       <Head>
         {process.env.NODE_ENV === "production" && (
           <>
-            <script
+            <Script
               id="Cookiebot"
               src="https://consent.cookiebot.com/uc.js"
               data-cbid="714f55d0-41b0-4b59-bbdf-3f6f39851765"
               data-blockingmode="auto"
-              type="text/javascript"
-            ></script>
-            <script
-              async
+            ></Script>
+
+            <Script
               src="https://www.googletagmanager.com/gtag/js?id=UA-148440679-1"
-            ></script>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'UA-148440679-1');
-        `,
-              }}
+              strategy="afterInteractive"
             />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                
+                  gtag('config', 'UA-148440679-1');
+                `}
+            </Script>
           </>
         )}
 
