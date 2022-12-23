@@ -31,11 +31,10 @@ export async function getStaticProps({ preview = false }) {
   const [homeData, menuData, footerData] = await Promise.all([
     getHome(preview),
     getMenu("Main Menu"),
-    getFooter("Main Footer"),
+    getFooter("Main Footer")
   ]);
   return {
-    props: { preview, homeData, menuData, footerData },
-    revalidate: 600,
+    props: { preview, homeData, menuData, footerData }
   };
 }
 
