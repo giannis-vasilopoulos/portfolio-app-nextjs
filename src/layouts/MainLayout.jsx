@@ -79,10 +79,10 @@ function MainLayout({ children, meta, footer }) {
 
 MainLayout.propTypes = {
   meta: PropTypes.shape({
-    fields: PropTypes.object.isRequired,
+    fields: PropTypes.object.isRequired
   }),
   footer: PropTypes.object.isRequired,
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 export default MainLayout;
