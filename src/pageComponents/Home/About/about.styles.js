@@ -28,6 +28,15 @@ export const ImageBio = styled.img({
   objectFit: "cover"
 });
 
+export const ImageBioContainer = styled.div({
+  height: 250,
+  width: 250,
+  position: "relative",
+  display: "block",
+  objectFit: "cover",
+  margin: "auto"
+});
+
 export const ColStyles = css({
   textAlign: "center"
 });
