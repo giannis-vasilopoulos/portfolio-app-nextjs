@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,700&amp;display=swap");
 
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
+}
+
 body,
 html {
   overflow-x: hidden;
