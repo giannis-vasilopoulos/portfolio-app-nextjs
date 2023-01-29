@@ -4,7 +4,7 @@ import {
   SocialList,
   VersionStyle,
   CopyrightContainer,
-  CopyrightText,
+  CopyrightText
 } from "./footer.styles";
 import { InView } from "react-intersection-observer";
 
