@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Skills from "components/Skills/";
 import { InView } from "react-intersection-observer";
+import Image from "next/image";
 
 import {
   AboutContainer,
@@ -10,12 +11,11 @@ import {
   RowStyles,
   ToolsContainer,
   ToolsRowStyles,
-  ImageBio,
+  ImageBioContainer,
   BioContainer,
   LeftColStyles,
   RightColStyles,
-  ToolImage,
-  ColStyles,
+  ColStyles
 } from "./about.styles";
 
 function About({
@@ -25,7 +25,7 @@ function About({
   skillsTitle,
   skillsItems,
   toolsTitle,
-  toolsImages,
+  toolsImages
 }) {
   return (
     <AboutContainer id="about">
@@ -38,10 +38,18 @@ function About({
               {({ ref, inView }) => (
                 <div ref={ref}>
                   <LeftColStyles inView={inView}>
-                    <ImageBio
-                      src={aboutImage.file.url}
-                      alt={aboutImage.file.fileName.replace(".jpg", "")}
-                    />
+                    <ImageBioContainer>
+                      <Image
+                        src={`https:${aboutImage.file.url}`}
+                        alt={aboutImage.title}
+                        style={{
+                          borderRadius: "20%"
+                        }}
+                        layout="fill"
+                        objectFit="cover"
+                      />
+                    </ImageBioContainer>
+
                     <BioContainer
                       dangerouslySetInnerHTML={{ __html: bio.content[0].value }}
                     />
@@ -75,10 +83,11 @@ function About({
                   lg={image.description > 90 ? "3" : "2"}
                   className="mb-4"
                 >
-                  <ToolImage
+                  <Image
+                    src={`https:${image.file.url}`}
                     alt={image.title}
-                    src={image.file.url}
                     width={image.description}
+                    height={60}
                   />
                 </Col>
               );
