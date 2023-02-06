@@ -1,0 +1,28 @@
+name: CI Pull Requests
+on:
+  pull_request:
+    branches: [master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 16.x
+          cache: yarn
+      - name: yarn install
+        run: yarn install --frozen-lockfile
+      - name: yarn lint
+        run: yarn lint
+      - name: yarn build
+        run: yarn build
+        env:
+          CONTENTFUL_SPACE_ID: hqzw548gixsa
+          CONTENTFUL_ACCESS_TOKEN: 3iXt55h67JDRfrIxFUXv3i4lR73nZNFyJoY6YQT7Tn4
+          CONTENTFUL_PREVIEW_ACCESS_TOKEN: 7LQY0TVkmUZEA22Wp9S0PI2fSbAgzy8zZM-qEWBy3a4
+      - name: Danger
+        run: yarn danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
