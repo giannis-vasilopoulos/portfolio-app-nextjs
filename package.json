@@ -32,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.50.0",
     "danger": "^11.2.3",
+    "danger-plugin-npm-outdated": "^1.0.0",
     "eslint": "^8.2.0",
     "eslint-config-next": "12.0.10",
     "eslint-config-prettier": "^8.5.0",
