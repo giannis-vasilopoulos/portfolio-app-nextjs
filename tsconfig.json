@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "baseUrl": "src"
   },
-  "include": ["next-env.d.ts", "**/*.?s", "**/*.?sx", "dangerfile.mjs"],
+  "include": ["next-env.d.ts", "**/*.?s", "**/*.?sx"],
   "exclude": ["node_modules"]
 }
