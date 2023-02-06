@@ -17,10 +17,11 @@ jobs:
         run: yarn lint
       - name: yarn build
         run: yarn build
+        env:
+          CONTENTFUL_SPACE_ID: hqzw548gixsa
+          CONTENTFUL_ACCESS_TOKEN: 3iXt55h67JDRfrIxFUXv3i4lR73nZNFyJoY6YQT7Tn4
+          CONTENTFUL_PREVIEW_ACCESS_TOKEN: 7LQY0TVkmUZEA22Wp9S0PI2fSbAgzy8zZM-qEWBy3a4
       - name: Danger
         run: yarn danger ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONTENTFUL_SPACE_ID: hqzw548gixsa
-          CONTENTFUL_ACCESS_TOKEN: 3iXt55h67JDRfrIxFUXv3i4lR73nZNFyJoY6YQT7Tn4
-          CONTENTFUL_PREVIEW_ACCESS_TOKEN: 7LQY0TVkmUZEA22Wp9S0PI2fSbAgzy8zZM-qEWBy3a4
