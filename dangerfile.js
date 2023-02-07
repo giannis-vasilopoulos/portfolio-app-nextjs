@@ -17,5 +17,5 @@ if (danger.github.pr.additions + danger.github.pr.deletions > bigPRThreshold) {
       ") : Pull Request size seems relatively large. If Pull Request contains multiple changes, split each into separate PR will helps faster, easier review."
   );
 } else {
-  message("This PR looks fine and easy for code review");
+  message("This PR looks fine and easy for code review. Congrats!");
 }
