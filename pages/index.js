@@ -26,7 +26,7 @@ function Home({ homeData, menuData, footerData }) {
     </MainLayout>
   );
 }
-
+const test = "";
 export async function getStaticProps({ preview = false }) {
   const [homeData, menuData, footerData] = await Promise.all([
     getHome(preview),
