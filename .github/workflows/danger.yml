@@ -2,6 +2,9 @@ name: CI Pull Requests
 on:
   pull_request:
     branches: [master]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,9 +13,17 @@ jobs:
       - name: Use Node.js 16
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
           cache: yarn
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            ${{ github.workspace }}/node_modules
+            ${{ github.workspace }}/.next
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}
       - name: yarn install
+        if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - name: yarn lint
         run: yarn lint
