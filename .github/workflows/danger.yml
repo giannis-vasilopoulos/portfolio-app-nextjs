@@ -16,12 +16,14 @@ jobs:
           node-version: "16"
           cache: yarn
       - uses: actions/cache@v3
+        id: cache
         with:
           path: |
             ${{ github.workspace }}/node_modules
             ${{ github.workspace }}/.next
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}
       - name: yarn install
+        if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
       - name: yarn lint
         run: yarn lint
