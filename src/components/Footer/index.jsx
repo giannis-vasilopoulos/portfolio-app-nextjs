@@ -34,7 +34,8 @@ function Footer({ footer, id }) {
       </InView>
       <CopyrightContainer>
         <CopyrightText>
-          © {new Date().getFullYear()} {footer.copyright}{" "}
+          © {new Date().getFullYear()} {footer.copyright}
+          {"asas "}
           <VersionStyle>{process.env.NEXT_PUBLIC_VERSION}</VersionStyle>
         </CopyrightText>
         <CopyrightText align="right" gutterMb>
