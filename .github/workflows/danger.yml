@@ -20,7 +20,7 @@ jobs:
         with:
           path: |
             ${{ github.workspace }}/node_modules
-            ${{ github.workspace }}/.next
+            ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-
