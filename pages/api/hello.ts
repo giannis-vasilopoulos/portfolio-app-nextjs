@@ -19,6 +19,7 @@ const getDurationInMilliseconds = (start: [number, number]) => {
 router
   .use(expressWrapper(cors())) // express middleware are supported if you wrap it with expressWrapper
   .use((req, res, next) => {
+    //https://ipirozhenko.com/blog/measuring-requests-duration-nodejs-express/
     console.log(`${req.method} ${req.url} [STARTED]`);
     const start = process.hrtime();
 
