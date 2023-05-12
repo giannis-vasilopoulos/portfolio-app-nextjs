@@ -9,6 +9,7 @@
     "lint": "next lint --max-warnings=0"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.8.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@plaiceholder/next": "^2.5.0",
