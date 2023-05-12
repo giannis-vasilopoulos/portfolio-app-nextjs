@@ -57,7 +57,7 @@ function MainLayout({ children, meta, footer }) {
             src="https://www.googletagmanager.com/gtag/js?id=G-Y5G6NL0GPW"
             strategy="worker"
           />
-          <Script id="google-analytics" strategy="afterInteractive">
+          <Script id="google-analytics" strategy="worker">
             {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
