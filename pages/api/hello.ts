@@ -8,7 +8,6 @@ import cors from "cors";
 const router = createRouter<NextApiRequest, NextApiResponse>();
 
 const getDurationInMilliseconds = (start: [number, number]) => {
-  console.log(start);
   const NS_PER_SEC = 1e9;
   const NS_TO_MS = 1e6;
   const diff = process.hrtime(start);
@@ -43,10 +42,14 @@ router
 
     next();
   })
-  .get((req, res) => {
+  .get((req, res, next) => {
+    if (true) throw new Error("thrown stuff will be caught");
+    return next();
     fetch("http://localhost:4000/template")
       .then((response) => response.json())
-      .then((data) => res.send(data));
+      .then((data) => {
+        res.send(data);
+      });
   });
 // create a handler from router with custom
 // onError and onNoMatch

@@ -54,16 +54,16 @@ function MainLayout({ children, meta, footer }) {
           ></Script>
 
           <Script
-            src="https://www.googletagmanager.com/gtag/js?id=UA-148440679-1"
-            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-Y5G6NL0GPW"
+            strategy="worker"
           />
           <Script id="google-analytics" strategy="afterInteractive">
             {`
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                
-                  gtag('config', 'UA-148440679-1');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-Y5G6NL0GPW');
                 `}
           </Script>
         </>
