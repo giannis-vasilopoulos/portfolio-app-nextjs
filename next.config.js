@@ -6,6 +6,9 @@ module.exports = withPlaiceholder({
   compiler: {
     emotion: true
   },
+  experimental: {
+    nextScriptWorkers: true
+  },
   images: {
     domains: ["images.ctfassets.net"],
     dangerouslyAllowSVG: true,
