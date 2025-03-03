@@ -3,12 +3,14 @@ import { createClient } from "contentful";
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  environment: process.env.CONTENTFUL_ENVIRONMENT ?? "master"
 });
 
 const previewClient = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
   accessToken: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
   host: "preview.contentful.com",
+  environment: process.env.CONTENTFUL_ENVIRONMENT ?? "master"
 });
 
 const getClient = (preview) => (preview ? previewClient : client);
@@ -21,7 +23,7 @@ export async function getHome(preview) {
 export async function getFooter(name) {
   const entry = await getClient(false).getEntries({
     content_type: "footer",
-    "fields.footerName": name,
+    "fields.footerName": name
   });
   return entry?.items?.map((item) => item.fields)[0];
 }
@@ -29,7 +31,7 @@ export async function getFooter(name) {
 export async function getMenu(menu) {
   const menuEntry = await getClient(false).getEntries({
     content_type: "menu",
-    "fields.menuName": menu,
+    "fields.menuName": menu
   });
   return menuEntry?.items?.map((item) => item.fields)[0];
 }
@@ -37,7 +39,7 @@ export async function getMenu(menu) {
 function parseAuthor({ fields }) {
   return {
     name: fields.name,
-    picture: fields.picture.fields.file,
+    picture: fields.picture.fields.file
   };
 }
 
@@ -49,7 +51,7 @@ function parsePost({ fields }) {
     content: fields.content,
     excerpt: fields.excerpt,
     coverImage: fields.coverImage.fields.file,
-    author: parseAuthor(fields.author),
+    author: parseAuthor(fields.author)
   };
 }
 
@@ -61,7 +63,7 @@ export async function getPreviewPostBySlug(slug) {
   const entries = await getClient(true).getEntries({
     content_type: "post",
     limit: 1,
-    "fields.slug[in]": slug,
+    "fields.slug[in]": slug
   });
   return parsePostEntries(entries)[0];
 }
@@ -69,7 +71,7 @@ export async function getPreviewPostBySlug(slug) {
 export async function getAllPostsWithSlug() {
   const entries = await client.getEntries({
     content_type: "post",
-    select: "fields.slug",
+    select: "fields.slug"
   });
   return parsePostEntries(entries, (post) => post.fields);
 }

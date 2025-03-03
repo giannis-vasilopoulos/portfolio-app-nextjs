@@ -5,6 +5,16 @@ import Skills from "components/Skills/";
 import { InView } from "react-intersection-observer";
 import Image from "next/image";
 
+function getYearsOfWork() {
+  const startDate = new Date(2016, 6);
+  const currentDate = new Date();
+
+  const yearsDifference = currentDate.getFullYear() - startDate.getFullYear();
+  const monthsDifference = currentDate.getMonth() - startDate.getMonth();
+
+  return monthsDifference < 0 ? yearsDifference - 1 : yearsDifference;
+}
+
 import {
   AboutContainer,
   Title,
@@ -51,7 +61,12 @@ function About({
                     </ImageBioContainer>
 
                     <BioContainer
-                      dangerouslySetInnerHTML={{ __html: bio.content[0].value }}
+                      dangerouslySetInnerHTML={{
+                        __html: bio.content[0]?.value?.replace(
+                          "{years}",
+                          getYearsOfWork()
+                        )
+                      }}
                     />
                   </LeftColStyles>
                 </div>
