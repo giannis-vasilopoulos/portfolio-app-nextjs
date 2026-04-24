@@ -2,21 +2,22 @@
 const nextConfig = {
   swcMinify: true,
   compiler: {
-    emotion: true
+    emotion: true,
   },
   experimental: {
-    nextScriptWorkers: true
+    nextScriptWorkers: true,
+    // inlineCss: true,
   },
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.ctfassets.net",
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
       },
     ],
     dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
-  }
-}
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+};
 
-module.exports =nextConfig;
+module.exports = nextConfig;
