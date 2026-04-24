@@ -1,0 +1,9 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://giannis-vasilopoulos.com/api/hello",
+      "rel": "service-desc",
+      "href": "https://giannis-vasilopoulos.com/openapi.json"
+    }
+  ]
+}

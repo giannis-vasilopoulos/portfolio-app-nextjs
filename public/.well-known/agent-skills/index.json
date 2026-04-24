@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
+  "skills": [
+    {
+      "name": "portfolio-info",
+      "type": "info",
+      "description": "Provides information about Giannis's portfolio and skills.",
+      "url": "https://giannis-vasilopoulos.com/",
+      "sha256": "4b92b606f522e8912e796851167905106191b721867e914006c8b091f038166d"
+    }
+  ]
+}
