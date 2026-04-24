@@ -22,7 +22,10 @@ function Fold({ title, technologies, menuData }) {
         ref={foldRef}
       >
         {title}
-        <p>I&apos;m Javascript Full-Stack Engineer, building scalable web applications</p>
+        <p>
+          I&apos;m a JavaScript Full-Stack Engineer crafting scalable, high-performance web
+          applications
+        </p>
         <TechnologiesContainer>
           {technologies.map(({ title, file }) => {
             return (
