@@ -1,11 +1,11 @@
-import AnimatedArrowDown from "components/AnimatedArrowDown/";
-import Menu from "components/Menu/";
-import { FoldContainer, TechnologiesContainer } from "./fold.styles";
-import { Link } from "react-scroll";
-import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
+import AnimatedArrowDown from 'components/AnimatedArrowDown/';
+import Menu from 'components/Menu/';
+import { FoldContainer, TechnologiesContainer } from './fold.styles';
+import { Link } from 'react-scroll';
+import { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
 
-function Fold({ title, typingTitles, technologies, menuData }) {
+function Fold({ title, technologies, menuData }) {
   const [foldHeight, setFoldHeight] = useState(null);
   const foldRef = useRef(null);
 
@@ -17,8 +17,12 @@ function Fold({ title, typingTitles, technologies, menuData }) {
 
   return (
     <>
-      <FoldContainer id="home" ref={foldRef}>
+      <FoldContainer
+        id="home"
+        ref={foldRef}
+      >
         {title}
+        <p>I&apos;m Javascript Full-Stack Engineer, building scalable web applications</p>
         <TechnologiesContainer>
           {technologies.map(({ title, file }) => {
             return (
@@ -30,17 +34,26 @@ function Fold({ title, typingTitles, technologies, menuData }) {
                 priority
                 height={50}
                 style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
             );
           })}
         </TechnologiesContainer>
-        <Link to="about" spy smooth duration={500}>
+        <Link
+          to="about"
+          spy
+          smooth
+          duration={500}
+        >
           <AnimatedArrowDown />
         </Link>
       </FoldContainer>
-      <Menu data={menuData} foldHeight={foldHeight && foldHeight} />
+      <Menu
+        data={menuData}
+        foldHeight={foldHeight && foldHeight}
+      />
     </>
   );
 }
