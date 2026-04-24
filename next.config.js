@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { withPlaiceholder } = require("@plaiceholder/next");
-
-module.exports = withPlaiceholder({
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   swcMinify: true,
   compiler: {
     emotion: true
@@ -10,8 +8,15 @@ module.exports = withPlaiceholder({
     nextScriptWorkers: true
   },
   images: {
-    domains: ["images.ctfassets.net"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+      },
+    ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
   }
-});
+}
+
+module.exports =nextConfig;

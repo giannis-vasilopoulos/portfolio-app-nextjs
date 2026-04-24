@@ -52,12 +52,12 @@ function About({
                       <Image
                         src={`https:${aboutImage.file.url}`}
                         alt={aboutImage.title}
+                        fill
+                        sizes="100vw"
                         style={{
-                          borderRadius: "20%"
-                        }}
-                        layout="fill"
-                        objectFit="cover"
-                      />
+                          borderRadius: "20%",
+                          objectFit: "cover"
+                        }} />
                     </ImageBioContainer>
 
                     <BioContainer
@@ -103,7 +103,10 @@ function About({
                     alt={image.title}
                     width={image.description}
                     height={60}
-                  />
+                    style={{
+                      maxWidth: "100%",
+                      height: "auto"
+                    }} />
                 </Col>
               );
             })}
