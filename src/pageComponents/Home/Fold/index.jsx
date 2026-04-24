@@ -1,4 +1,3 @@
-import Typed from "react-typed";
 import AnimatedArrowDown from "components/AnimatedArrowDown/";
 import Menu from "components/Menu/";
 import { FoldContainer, TechnologiesContainer } from "./fold.styles";
@@ -20,17 +19,6 @@ function Fold({ title, typingTitles, technologies, menuData }) {
     <>
       <FoldContainer id="home" ref={foldRef}>
         {title}
-        <Typed
-          strings={typingTitles}
-          start-delay={2000}
-          typeSpeed={100}
-          backSpeed={100}
-          cursor-char="'|'"
-          backDelay={1}
-          loop
-          loopCount={3}
-          smartBackspace
-        />
         <TechnologiesContainer>
           {technologies.map(({ title, file }) => {
             return (
@@ -41,7 +29,10 @@ function Fold({ title, typingTitles, technologies, menuData }) {
                 key={title}
                 priority
                 height={50}
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             );
           })}
         </TechnologiesContainer>
