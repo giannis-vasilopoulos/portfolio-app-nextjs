@@ -16,8 +16,19 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "useUnknownInCatchVariables": false,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.?s", "**/*.?sx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.?s",
+    "**/*.?sx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
