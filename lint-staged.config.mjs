@@ -1,6 +1,6 @@
 import path from 'node:path';
 
-export default {
+const config = {
   '**/*.{js,jsx,ts,tsx}': (filenames) => {
     const relativePaths = filenames.map((f) => path.relative(process.cwd(), f)).join(' ');
 
@@ -11,3 +11,5 @@ export default {
   },
   '!**/*.{js,jsx,ts,tsx}': ['prettier --write --ignore-unknown'],
 };
+
+export default config;
