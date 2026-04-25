@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Giannis Vasilopoulos - Javascript Full Stack Software Engineer',
+  title: 'Giannis Vasilopoulos - Senior Frontend Engineer',
   description:
-    'Professional portfolio showcasing expertise in React, TypeScript, and modern web technologies. Discover projects, technical skills, and innovations in high-performance UI development.',
+    'Professional portfolio showcasing expertise in React, TypeScript, and modern web technologies — with full-stack capability across Node.js, REST, and GraphQL. Discover projects, technical skills, and innovations in high-performance UI development.',
 };
 
 export default function RootLayout({
