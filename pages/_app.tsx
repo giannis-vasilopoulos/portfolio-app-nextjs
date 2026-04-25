@@ -36,7 +36,8 @@ function PortfolioApp({ Component, pageProps }: AppProps) {
         tools: [
           {
             name: 'get_portfolio_summary',
-            description: "Get a summary of Giannis's portfolio and skills",
+            description:
+              "Retrieve a comprehensive summary of Giannis's professional portfolio, technical expertise, and core competencies",
             inputSchema: {
               type: 'object',
               properties: {},
@@ -44,13 +45,14 @@ function PortfolioApp({ Component, pageProps }: AppProps) {
             execute: async () => {
               return {
                 summary:
-                  'Giannis Vasilopoulos is a Software Engineer specialized in React, TypeScript, and modern web technologies. He focus on creating high-performance, accessible, and visually appealing user interfaces.',
+                  'Giannis Vasilopoulos is a full-stack Software Engineer with specialized expertise in React, TypeScript, and modern web technologies. He is dedicated to architecting high-performance, accessible, and visually compelling user interfaces while maintaining best practices in code quality and user experience design.',
               };
             },
           },
           {
             name: 'get_contact_links',
-            description: "Get links to Giannis's social and contact profiles",
+            description:
+              'Access professional contact information and social media profiles for connecting with Giannis',
             inputSchema: {
               type: 'object',
               properties: {},
@@ -59,7 +61,7 @@ function PortfolioApp({ Component, pageProps }: AppProps) {
               return {
                 website: 'https://giannis-vasilopoulos.com/',
                 linkedin: 'https://www.linkedin.com/in/giannisvasilopoulos/',
-                github: 'https://github.com/giannisvasi',
+                github: 'https://github.com/giannis-vasilopoulos',
               };
             },
           },
