@@ -3,14 +3,6 @@ import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'styles/globals.css';
 
-declare global {
-  interface Navigator {
-    modelContext?: {
-      provideContext: (config: object) => void;
-    };
-  }
-}
-
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   if (process.env.NODE_ENV !== 'production') return;
   const pathname =
