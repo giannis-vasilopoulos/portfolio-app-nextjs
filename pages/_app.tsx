@@ -45,7 +45,7 @@ function PortfolioApp({ Component, pageProps }: AppProps) {
             execute: async () => {
               return {
                 summary:
-                  'Giannis Vasilopoulos is a full-stack Software Engineer with specialized expertise in React, TypeScript, and modern web technologies. He is dedicated to architecting high-performance, accessible, and visually compelling user interfaces while maintaining best practices in code quality and user experience design.',
+                  'Giannis Vasilopoulos is a Senior Frontend Engineer with specialized expertise in React, TypeScript, and modern web technologies. Comfortable across the full JS stack — including Node.js, REST APIs, and GraphQL — he is dedicated to architecting high-performance, accessible, and visually compelling user interfaces while maintaining best practices in code quality and user experience design.',
               };
             },
           },
