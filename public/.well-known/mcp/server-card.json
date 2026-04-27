@@ -1,0 +1,13 @@
+{
+  "serverInfo": {
+    "name": "Giannis Portfolio Server",
+    "version": "1.0.0"
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://giannis-vasilopoulos.com/api/mcp"
+  },
+  "capabilities": {
+    "tools": true
+  }
+}

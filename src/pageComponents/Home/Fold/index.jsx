@@ -1,12 +1,11 @@
-import Typed from "react-typed";
-import AnimatedArrowDown from "components/AnimatedArrowDown/";
-import Menu from "components/Menu/";
-import { FoldContainer, TechnologiesContainer } from "./fold.styles";
-import { Link } from "react-scroll";
-import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
+import AnimatedArrowDown from 'components/AnimatedArrowDown/';
+import Menu from 'components/Menu/';
+import { FoldContainer, TechnologiesContainer } from './fold.styles';
+import { Link } from 'react-scroll';
+import { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
 
-function Fold({ title, typingTitles, technologies, menuData }) {
+function Fold({ title, technologies, menuData }) {
   const [foldHeight, setFoldHeight] = useState(null);
   const foldRef = useRef(null);
 
@@ -18,19 +17,14 @@ function Fold({ title, typingTitles, technologies, menuData }) {
 
   return (
     <>
-      <FoldContainer id="home" ref={foldRef}>
+      <FoldContainer
+        id="home"
+        ref={foldRef}
+      >
         {title}
-        <Typed
-          strings={typingTitles}
-          start-delay={2000}
-          typeSpeed={100}
-          backSpeed={100}
-          cursor-char="'|'"
-          backDelay={1}
-          loop
-          loopCount={3}
-          smartBackspace
-        />
+        <p>
+          I&apos;m a Senior Frontend Engineer crafting scalable, high-performance web applications.
+        </p>
         <TechnologiesContainer>
           {technologies.map(({ title, file }) => {
             return (
@@ -41,15 +35,27 @@ function Fold({ title, typingTitles, technologies, menuData }) {
                 key={title}
                 priority
                 height={50}
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
               />
             );
           })}
         </TechnologiesContainer>
-        <Link to="about" spy smooth duration={500}>
+        <Link
+          to="about"
+          spy
+          smooth
+          duration={500}
+        >
           <AnimatedArrowDown />
         </Link>
       </FoldContainer>
-      <Menu data={menuData} foldHeight={foldHeight && foldHeight} />
+      <Menu
+        data={menuData}
+        foldHeight={foldHeight && foldHeight}
+      />
     </>
   );
 }
