@@ -22,7 +22,7 @@ function Fold({ title, technologies, menuData }) {
         ref={foldRef}
       >
         {title}
-        <p>
+        <p style={{ textAlign: 'center' }}>
           I&apos;m a Senior Frontend Engineer crafting scalable, high-performance web applications.
         </p>
         <TechnologiesContainer>
