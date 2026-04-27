@@ -4,7 +4,6 @@ const nextConfig = {
     emotion: true,
   },
   experimental: {
-    nextScriptWorkers: true,
     // inlineCss: true,
   },
   images: {

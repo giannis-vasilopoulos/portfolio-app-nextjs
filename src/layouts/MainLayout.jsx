@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Loader from "components/Loader/";
-import Footer from "components/Footer";
-import PropTypes from "prop-types";
-import Script from "next/script";
+import Head from 'next/head';
+import Loader from 'components/Loader/';
+import Footer from 'components/Footer';
+import PropTypes from 'prop-types';
+import Script from 'next/script';
 
 function MainLayout({ children, meta, footer }) {
   const { fields: favicon } = meta.fields.favicon;
@@ -10,13 +10,20 @@ function MainLayout({ children, meta, footer }) {
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          httpEquiv="X-UA-Compatible"
+          content="IE=edge"
+        />
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5"
         />
         <title>{meta.fields.title}</title>
-        <link rel="apple-touch-icon" sizes="180x180" href={favicon.file.url} />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={favicon.file.url}
+        />
         <link
           rel="icon"
           type={favicon.file.contentType}
@@ -29,22 +36,40 @@ function MainLayout({ children, meta, footer }) {
           sizes="16x16"
           href={favicon.file.url}
         />
-        <meta name="description" content={meta.fields.description} />
-        <meta property="og:title" content={meta.fields.title} />
-        <meta property="og:description" content={meta.fields.description} />
+        <meta
+          name="description"
+          content={meta.fields.description}
+        />
+        <meta
+          property="og:title"
+          content={meta.fields.title}
+        />
+        <meta
+          property="og:description"
+          content={meta.fields.description}
+        />
         <meta
           property="og:image"
           content={meta.fields.shareImage.fields.file.url}
         />
-        <meta property="og:url" content="https://giannis-vasilopoulos.com/" />
+        <meta
+          property="og:url"
+          content="https://giannis-vasilopoulos.com/"
+        />
         <meta
           name="apple-mobile-web-app-status-bar"
           content={meta.fields.themeColor}
         />
-        <meta name="msapplication-TileColor" content={meta.fields.themeColor} />
-        <meta name="theme-color" content={meta.fields.themeColor} />
+        <meta
+          name="msapplication-TileColor"
+          content={meta.fields.themeColor}
+        />
+        <meta
+          name="theme-color"
+          content={meta.fields.themeColor}
+        />
       </Head>
-      {process.env.NODE_ENV === "production" && (
+      {process.env.NODE_ENV === 'production' && (
         <>
           <Script
             id="Cookiebot"
@@ -53,11 +78,8 @@ function MainLayout({ children, meta, footer }) {
             data-blockingmode="auto"
           ></Script>
 
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-Y5G6NL0GPW"
-            strategy="worker"
-          />
-          <Script id="google-analytics" strategy="worker">
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y5G6NL0GPW" />
+          <Script id="google-analytics">
             {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -72,17 +94,20 @@ function MainLayout({ children, meta, footer }) {
         <Loader />
         {children}
       </main>
-      <Footer id="contact" footer={footer} />
+      <Footer
+        id="contact"
+        footer={footer}
+      />
     </>
   );
 }
 
 MainLayout.propTypes = {
   meta: PropTypes.shape({
-    fields: PropTypes.object.isRequired
+    fields: PropTypes.object.isRequired,
   }),
   footer: PropTypes.object.isRequired,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default MainLayout;
