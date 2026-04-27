@@ -3,6 +3,7 @@ import Loader from 'components/Loader/';
 import Footer from 'components/Footer';
 import PropTypes from 'prop-types';
 import Script from 'next/script';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 function MainLayout({ children, meta, footer }) {
   const { fields: favicon } = meta.fields.favicon;
@@ -77,17 +78,7 @@ function MainLayout({ children, meta, footer }) {
             data-cbid="714f55d0-41b0-4b59-bbdf-3f6f39851765"
             data-blockingmode="auto"
           ></Script>
-
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-Y5G6NL0GPW" />
-          <Script id="google-analytics">
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-Y5G6NL0GPW');
-                `}
-          </Script>
+          <GoogleTagManager gtmId="G-Y5G6NL0GPW" />
         </>
       )}
       <main>
