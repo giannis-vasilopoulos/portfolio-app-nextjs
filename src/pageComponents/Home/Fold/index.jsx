@@ -23,8 +23,7 @@ function Fold({ title, technologies, menuData }) {
       >
         {title}
         <p>
-          I&apos;m a JavaScript Full-Stack Engineer crafting scalable, high-performance web
-          applications
+          I&apos;m a Senior Frontend Engineer crafting scalable, high-performance web applications.
         </p>
         <TechnologiesContainer>
           {technologies.map(({ title, file }) => {
