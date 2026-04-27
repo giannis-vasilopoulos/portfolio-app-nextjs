@@ -7,9 +7,6 @@ settings:
 importers:
   .:
     dependencies:
-      '@builder.io/partytown':
-        specifier: ^0.10.3
-        version: 0.10.3
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.2.14)(react@19.2.5)
@@ -246,15 +243,6 @@ packages:
         integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==,
       }
     engines: { node: '>=6.9.0' }
-
-  '@builder.io/partytown@0.10.3':
-    resolution:
-      {
-        integrity: sha512-N2SWA3c5vEad3rgdAFM3zMb6uc7aXqibkgAz4ijvYzycgQXJ4dE5oH6fGFMXSQWj6ayVlLT1/CmpflYUJHfmQg==,
-      }
-    engines: { node: '>=18.0.0' }
-    deprecated: Use @qwik.dev/partytown instead
-    hasBin: true
 
   '@contentful/content-source-maps@0.11.44':
     resolution:
@@ -4719,8 +4707,6 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
-
-  '@builder.io/partytown@0.10.3': {}
 
   '@contentful/content-source-maps@0.11.44':
     dependencies:
