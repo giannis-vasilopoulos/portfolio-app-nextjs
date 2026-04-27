@@ -28,7 +28,7 @@
     "react-intersection-observer": "^8.32.2",
     "react-scroll": "^1.8.9",
     "react-typed": "^1.2.0",
-    "sharp": "^0.31.3"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
